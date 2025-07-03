@@ -1,15 +1,3 @@
-  <script>
-  const access = localStorage.getItem("broadcast_auth");
-  if (access !== "ok") {
-    const pwd = prompt("🔐 Enter System Password:");
-    if (pwd !== "Kontol404!") {
-      alert("❌ Access Denied");
-      window.location.href = "https://www.google.com"; // redirect keluar
-    } else {
-      localStorage.setItem("broadcast_auth", "ok");
-    }
-  }
-  </script>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>WhatsApp Broadcast Sender</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="auth.js"></script>
   <script defer src="matrix.js"></script>
 </head>
 <body>
