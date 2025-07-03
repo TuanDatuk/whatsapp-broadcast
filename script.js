@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const BASE_URL = "http://localhost:3000";
+  const BASE_URL = "https://tuandatuk.github.io/whatsapp-broadcast/";
 
   const qrModal = document.getElementById("qr-modal");
   const qrImage = document.getElementById("qr-preview");
