@@ -1,0 +1,71 @@
+  <script>
+  const access = localStorage.getItem("broadcast_auth");
+  if (access !== "ok") {
+    const pwd = prompt("🔐 Enter System Password:");
+    if (pwd !== "Kontol404!") {
+      alert("❌ Access Denied");
+      window.location.href = "https://www.google.com"; // redirect keluar
+    } else {
+      localStorage.setItem("broadcast_auth", "ok");
+    }
+  }
+  </script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WhatsApp Broadcast Sender</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="matrix.js"></script>
+</head>
+<body>
+  <canvas id="matrix-canvas"></canvas>
+
+  <div class="container">
+    <div class="section">
+      <div class="box">
+        <h2>Whatsapp Broadcast Sender V0.1.3.1</h2>
+        <h3>Logs</h3>
+        <div id="log-box" class="log-box"></div>
+      </div>
+      <div class="box">
+        <div class="form-group">
+          <label>Title (Bold text)</label>
+          <input type="text" id="title" />
+          <label>Description</label>
+          <textarea id="description"></textarea>
+          <label>Link</label>
+          <input type="text" id="link" />
+        </div>
+        <div class="form-group">
+          <label for="image-input">Drop Image</label>
+          <input type="file" id="image-input" accept="image/*" />
+        </div>
+
+        <div class="form-group">
+          <label for="list-button">Drop List Number</label>
+          <input type="file" id="list-button" accept=".txt" />
+        </div>
+
+        <div class="button-group">
+          <button type="button" id="stop-button" class="btn red">Stop</button>
+          <button type="button" id="startqr-button" class="btn yellow">StartQR</button>
+          <button type="button" id="send-button" class="btn green">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- QR Modal -->
+  <div id="qr-modal" class="modal">
+    <div class="modal-content">
+      <h3>Scan QR Code to Login</h3>
+      <img id="qr-preview" class="qr-img" />
+    </div>
+  </div>
+
+  <footer>©2025. Anunnaki Corporation. All Rights Reserved</footer>
+  <script src="script.js"></script>
+</body>
+</html>
